@@ -1,0 +1,4 @@
+User-Agent: *
+Allow: /
+
+Sitemap: https://maiasb.github.io/barba-negra/sitemap.xml
