@@ -32,7 +32,7 @@ export const SERVICOS = [
   { id: "depilacao", sub: "Mais higiene e conforto", nome: "Depilação no ouvido", img: "/img/post1.jpg", texto: "Mais higiene, confiança e conforto, com método seguro." },
 ] as const;
 
-// TODO (cliente): trocar pelos nomes e fotos reais. Os nomes não constam no Instagram.
+// Nomes provisórios. Pendência registrada em TODO.md.
 export const BARBEIROS = [
   { id: "b1", nome: "Barbeiro 1", funcao: "Barbeiro", img: "/img/post7.jpg" },
   { id: "b2", nome: "Barbeiro 2", funcao: "Barbeiro", img: "/img/post8.jpg" },
