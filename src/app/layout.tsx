@@ -23,7 +23,11 @@ export const viewport: Viewport = { themeColor: "#0a0a0b" };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="pt-BR" className={`${serif.variable} ${sans.variable}`}>
+    <html lang="pt-BR" className={`${serif.variable} ${sans.variable}`} suppressHydrationWarning>
+      <head>
+        {/* Marca o html antes da primeira pintura: o CSS esconde os itens animados só quando há JS e movimento permitido. */}
+        <script dangerouslySetInnerHTML={{ __html: "if(!matchMedia('(prefers-reduced-motion: reduce)').matches)document.documentElement.classList.add('motion')" }} />
+      </head>
       <body suppressHydrationWarning>{children}</body>
     </html>
   );
