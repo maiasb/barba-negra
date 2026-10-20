@@ -6,7 +6,7 @@ import "./globals.css";
 const serif = Cormorant_Garamond({ subsets: ["latin"], weight: ["500", "600", "700"], variable: "--font-serif" });
 const sans = Montserrat({ subsets: ["latin"], weight: ["400", "500", "600", "700"], variable: "--font-sans" });
 
-const title = "Barbearia em Castanhal | Barba Negra - Imagem Masculina";
+const title = "Barba Negra";
 const description =
   "Barbearia em Castanhal há 8 anos: corte de cabelo, barba, sobrancelha e hidratação. Agende seu horário pelo WhatsApp. Terça a sábado, 9h às 20h, no Centro.";
 
