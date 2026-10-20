@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useEffect, useMemo, useState } from "react";
 import { BARBEIROS, SERVICOS, waUrl } from "@/data/site";
 
@@ -84,14 +85,18 @@ export function Agendamento() {
   };
 
   return (
-    <section id="agendar" className="section section--light">
-      <div className="wrap">
-        <header data-reveal>
-          <h2 className="title">Agendamento Online</h2>
-          <p className="lead">Monte seu atendimento em 4 passos. Enviamos tudo pronto no WhatsApp.</p>
+    <section id="agendar" className="section section--dark agenda">
+      <div className="agenda__img" aria-hidden="true">
+        <Image src="/img/post6.jpg" alt="" fill sizes="50vw" />
+      </div>
+      <div className="wrap agenda__grid">
+        <header className="agenda__head" data-reveal>
+          <h2 className="agenda__title">Agendamento Online</h2>
+          <p>Monte seu atendimento em 4 passos. Enviamos tudo pronto no WhatsApp.</p>
         </header>
 
         <div className="book" data-reveal>
+          <div className="book__form">
           <fieldset className="step">
             <legend><i>1</i> Serviços</legend>
             <div className="chips">
@@ -105,7 +110,7 @@ export function Agendamento() {
 
           <fieldset className="step">
             <legend><i>2</i> Barbeiro</legend>
-            <div className="chips">
+            <div className="chips chips--bar">
               {[{ id: SEM_PREF, nome: "Sem preferência" }, ...BARBEIROS].map((b) => (
                 <button key={b.id} type="button" className="chip" aria-pressed={barbeiro === b.id} onClick={() => setBarbeiro(b.id)}>
                   {b.nome}
@@ -116,7 +121,7 @@ export function Agendamento() {
 
           <fieldset className="step">
             <legend><i>3</i> Dia <small>terça a sábado</small></legend>
-            <div className="chips">
+            <div className="chips chips--day">
               {dias.map((d) => (
                 <button key={d.iso} type="button" className="chip" aria-pressed={dia === d.iso} onClick={() => { setDia(d.iso); setHora(""); }}>
                   {d.label}
@@ -154,6 +159,7 @@ export function Agendamento() {
               Enviar pelo WhatsApp
             </a>
             <p className="note">O horário fica reservado após a confirmação da barbearia no WhatsApp.</p>
+          </div>
           </div>
         </div>
       </div>
