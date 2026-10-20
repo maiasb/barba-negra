@@ -127,6 +127,7 @@ ul { list-style: none; }
 .agenda__img img { object-fit: cover; object-position: center 40%; filter: grayscale(0.7) contrast(1.05) brightness(1.1); }
 .agenda__grid { display: grid; grid-template-columns: 1fr minmax(0, 560px); gap: clamp(32px, 6vw, 96px); align-items: center; }
 .agenda__head { display: grid; gap: 18px; align-content: center; }
+@media (min-width: 901px) { .agenda__head { align-self: start; margin-top: clamp(40px, 7vw, 110px); } }
 .agenda__title { font-size: clamp(2rem, 4.5vw, 3.4rem); font-weight: 700; line-height: 1.1; color: #fff; text-shadow: 0 2px 18px rgba(0,0,0,0.8); }
 .agenda__head p { color: #e4e6ea; max-width: 420px; text-shadow: 0 1px 12px rgba(0,0,0,0.9); }
 .book { background: rgba(10,10,11,0.88); border: 1px solid var(--steel-d); border-radius: 10px; box-shadow: -24px 0 60px rgba(0,0,0,0.65); text-align: left; }
