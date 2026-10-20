@@ -18,7 +18,7 @@ export function Barbeiros() {
   return (
     <section id="barbeiros" className="section section--paper">
       <div className="wrap">
-        <h2 className="title">Nossos Barbeiros</h2>
+        <h2 className="title">Nossos Profissionais</h2>
         <p className="lead" data-reveal>Profissionais experientes. Escolha o seu no agendamento ou deixe a gente indicar.</p>
         <div className="carousel carousel--grid">
           <button className="carousel__arrow carousel__arrow--l" onClick={() => go(-1)} aria-label="Barbeiro anterior">❮</button>
