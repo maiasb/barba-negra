@@ -78,6 +78,7 @@ ul { list-style: none; }
 .word > span { display: inline-block; }
 .hero__mark { grid-auto-flow: row; }
 .hero__btns { display: flex; flex-wrap: wrap; gap: 14px; justify-content: center; }
+.hero__curtain { display: none; }
 .hero__tag { color: #d3d5d9; font-size: 0.9rem; }
 
 /* Sobre */
@@ -205,7 +206,17 @@ input { font: inherit; color: #fff; background: #2a303a; border: 1px solid var(-
 .fab:hover { transform: scale(1.08); }
 
 /* Estado inicial das animações de entrada (classe .motion definida no <head>) */
-.motion [data-reveal] { opacity: 0; transform: translateY(36px); }
+.motion [data-reveal], .motion [data-hero] { opacity: 0; transform: translateY(36px); }
+.motion .hero__curtain { display: block; position: absolute; inset: 0; z-index: 5; background: var(--ink); border-bottom: 3px solid var(--steel); }
+.motion .scard img { clip-path: inset(0 0 100% 0); }
+
+/* Faixa rolando entre o hero e o Sobre */
+.marquee { background: var(--steel); color: var(--ink); overflow: hidden; padding-block: 18px; border-block: 1px solid rgba(10,10,11,0.2); }
+.marquee__track { display: flex; width: max-content; will-change: transform; }
+.marquee__set { display: flex; flex-shrink: 0; }
+.marquee__set li { display: flex; align-items: center; font-family: var(--serif); font-weight: 700; font-size: clamp(1.3rem, 3vw, 2.1rem); letter-spacing: 0.08em; text-transform: uppercase; white-space: nowrap; }
+.marquee__set i { font-style: normal; font-size: 0.6em; margin-inline: clamp(22px, 3vw, 44px); opacity: 0.7; }
+@media (prefers-reduced-motion: reduce) { .marquee__track { width: auto; justify-content: center; } .marquee__set[aria-hidden] { display: none; } .marquee__set { flex-wrap: wrap; justify-content: center; row-gap: 8px; } }
 .motion [data-word] { opacity: 0; transform: translateY(110%); }
 .motion [data-count] { opacity: 0; }
 

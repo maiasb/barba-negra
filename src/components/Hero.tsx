@@ -6,17 +6,21 @@ export function Hero() {
     <section id="inicio" className="hero">
       <Image src="/img/hero-banner.jpg" alt="Cadeira de barbeiro clássica de couro no salão da Barba Negra" fill priority sizes="100vw" className="hero__bg" />
       <div className="hero__shade" />
+      <div className="hero__curtain" aria-hidden="true" />
       <div className="hero__in">
         <h1 className="hero__mark" aria-label="Barba Negra - Barbearia em Castanhal">
-          <span className="word"><span data-word>BARBA</span></span>{" "}
-          <span className="word"><span data-word>NEGRA</span></span>
-          <small>Barbearia em Castanhal · Imagem Masculina</small>
+          {["BARBA", "NEGRA"].map((w) => (
+            <span key={w} className="word" aria-hidden="true">
+              {w.split("").map((l, i) => <span key={i} data-word>{l}</span>)}
+            </span>
+          ))}
+          <small data-hero>Barbearia em Castanhal · Imagem Masculina</small>
         </h1>
-        <div className="hero__btns" data-reveal>
+        <div className="hero__btns" data-hero>
           <a href={SITE.agendamentoOnline} target="_blank" rel="noopener noreferrer" className="btn btn--steel">Agendamento Online</a>
           <a href="#agendar" className="btn btn--steel">Agendamento WhatsApp</a>
         </div>
-        <p className="hero__tag" data-reveal>{SITE.anos} anos de tradição · Terça a sábado, 9h às 20h</p>
+        <p className="hero__tag" data-hero>{SITE.anos} anos de tradição · Terça a sábado, 9h às 20h</p>
       </div>
     </section>
   );
