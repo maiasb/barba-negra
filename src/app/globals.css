@@ -122,9 +122,9 @@ ul { list-style: none; }
 .marca__end { font-style: italic; color: #fff; }
 
 /* Agendamento */
-.agenda { position: relative; overflow: hidden; isolation: isolate; padding-block: clamp(64px, 9vw, 120px); border-block: 1px solid rgba(185,191,200,0.18); }
-.agenda__img { position: absolute; inset: 0 auto 0 0; width: min(62%, 1000px); z-index: -1; -webkit-mask-image: linear-gradient(to right, #000 35%, transparent 100%); mask-image: linear-gradient(to right, #000 35%, transparent 100%); }
-.agenda__img img { object-fit: cover; object-position: center 25%; filter: grayscale(0.7) contrast(1.05) brightness(0.8); }
+.agenda { position: relative; overflow: hidden; isolation: isolate; padding-block: clamp(64px, 9vw, 120px); background: linear-gradient(to bottom, var(--paper) 0, var(--ink) 160px, var(--ink) calc(100% - 160px), var(--light) 100%); }
+.agenda__img { position: absolute; inset: 0 auto 0 0; width: min(62%, 1000px); z-index: -1; --v: linear-gradient(to bottom, transparent 0, #000 160px, #000 calc(100% - 160px), transparent 100%); -webkit-mask-image: linear-gradient(to right, #000 35%, transparent 100%), var(--v); mask-image: linear-gradient(to right, #000 35%, transparent 100%), var(--v); -webkit-mask-composite: source-in; mask-composite: intersect; }
+.agenda__img img { object-fit: cover; object-position: center 40%; filter: grayscale(0.7) contrast(1.05) brightness(1.1); }
 .agenda__grid { display: grid; grid-template-columns: 1fr minmax(0, 560px); gap: clamp(32px, 6vw, 96px); align-items: center; }
 .agenda__head { display: grid; gap: 18px; align-content: center; }
 .agenda__title { font-size: clamp(2rem, 4.5vw, 3.4rem); font-weight: 700; line-height: 1.1; color: #fff; text-shadow: 0 2px 18px rgba(0,0,0,0.8); }

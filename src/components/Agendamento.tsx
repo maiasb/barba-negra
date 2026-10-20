@@ -87,7 +87,7 @@ export function Agendamento() {
   return (
     <section id="agendar" className="section section--dark agenda">
       <div className="agenda__img" aria-hidden="true">
-        <Image src="/img/post6.jpg" alt="" fill sizes="50vw" />
+        <Image src="/img/form.jpeg" alt="" fill sizes="50vw" />
       </div>
       <div className="wrap agenda__grid">
         <header className="agenda__head" data-reveal>
