@@ -8,9 +8,9 @@ const STATS = [
 export function Sobre() {
   return (
     <section id="sobre" className="section section--light">
-      <div className="wrap">
+      <div className="wrap wrap--wide">
         <h2 className="title">Sobre Nós</h2>
-        <p className="lead" data-reveal>
+        <p className="lead lead--wide" data-reveal>
           Há 8 anos a Barba Negra cuida da imagem do homem de Castanhal, com atendimento individual,
           produtos de qualidade e acabamento na navalha.
         </p>
