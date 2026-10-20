@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   title,
   description,
   alternates: { canonical: "/" },
-  openGraph: { title, description, type: "website", locale: "pt_BR", url: "/", images: ["/img/hero-salao.jpg"] },
+  openGraph: { title, description, type: "website", locale: "pt_BR", url: "/", images: ["/img/hero-banner.jpg"] },
   robots: { index: true, follow: true },
 };
 

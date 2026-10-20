@@ -4,7 +4,7 @@ import { SITE, waUrl } from "@/data/site";
 export function Hero() {
   return (
     <section id="inicio" className="hero">
-      <Image src="/img/hero-salao.jpg" alt="Barbeiros atendendo na Barba Negra, em Castanhal" fill priority sizes="100vw" className="hero__bg" />
+      <Image src="/img/hero-banner.jpg" alt="Cadeira de barbeiro clássica de couro no salão da Barba Negra" fill priority sizes="100vw" className="hero__bg" />
       <div className="hero__shade" />
       <div className="hero__in">
         <h1 className="hero__mark" aria-label="Barba Negra - Barbearia em Castanhal">

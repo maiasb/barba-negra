@@ -18,7 +18,7 @@ const jsonLd = {
   "@type": "BarberShop",
   name: "Barba Negra - Imagem Masculina",
   url: SITE.url,
-  image: `${SITE.url}/img/hero-salao.jpg`,
+  image: `${SITE.url}/img/hero-banner.jpg`,
   telephone: `+${SITE.whatsapp}`,
   sameAs: [SITE.instagram],
   hasMap: MAPS_LINK,
