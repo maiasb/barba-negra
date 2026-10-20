@@ -50,3 +50,14 @@ export const MARCA_BENEFICIOS = [
 export function waUrl(texto: string) {
   return `https://wa.me/${SITE.whatsapp}?text=${encodeURIComponent(texto)}`;
 }
+
+// Avaliações reais do Google. Para incluir outras, copie o texto e o nome exatamente como no Google.
+export const AVALIACOES = [
+  {
+    id: "gustavo-sibuya",
+    nome: "Gustavo Sibuya",
+    nota: 5,
+    texto:
+      "Cortei com o Rafael. Muita qualidade! Diferenciado. Mostrei uma foto minha mais antiga e pedi pra fazer igual (já pedi pra outros barbeiros lá em SP nunca fizeram igual) e o Rafael fez igual, porém melhor, mais certinho.",
+  },
+] as const;
