@@ -1,45 +1,57 @@
 "use client";
 
 import Image from "next/image";
-import { useRef, useState } from "react";
+import { useState } from "react";
 import { SERVICOS, SITE } from "@/data/site";
 
-export function Servicos() {
-  const track = useRef<HTMLDivElement>(null);
-  const [idx, setIdx] = useState(0);
+const Scissors = () => (
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><circle cx="6" cy="6" r="2.5" /><circle cx="6" cy="18" r="2.5" /><path d="M20 4 8.1 15.9M14.5 14.5 20 20M8.1 8.1 12 12" /></svg>
+);
+const ArrowUR = () => (
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9" /></svg>
+);
 
-  const step = () => {
-    const el = track.current?.firstElementChild as HTMLElement | undefined;
-    return el ? el.offsetWidth + 24 : 300;
-  };
-  const go = (dir: 1 | -1) => track.current?.scrollBy({ left: dir * step(), behavior: "smooth" });
-  const goTo = (i: number) => track.current?.scrollTo({ left: i * step(), behavior: "smooth" });
+export function Servicos() {
+  const [active, setActive] = useState(0);
 
   return (
     <section id="servicos" className="section section--light">
-      <div className="wrap">
-        <h2 className="title">Serviços</h2>
-        <div className="carousel">
-          <button className="carousel__arrow carousel__arrow--l" onClick={() => go(-1)} aria-label="Serviço anterior">❮</button>
-          <div className="carousel__track" ref={track} onScroll={(e) => setIdx(Math.round(e.currentTarget.scrollLeft / step()))} tabIndex={0} aria-label="Lista de serviços">
-            {SERVICOS.map((s) => (
-              <article key={s.id} className="scard">
-                <Image src={s.img} alt={s.nome} width={480} height={360} sizes="(max-width:700px) 90vw, 33vw" />
-                <div className="scard__body">
-                  <h3>{s.nome}</h3>
-                  <em>{s.sub}</em>
-                  <p>{s.texto}</p>
-                  <a className="btn btn--steel btn--sm" href={SITE.agendamentoOnline} target="_blank" rel="noopener noreferrer">Agendar</a>
-                </div>
-              </article>
+      <div className="wrap unit__wrap">
+        <header className="unit__head" data-reveal>
+          <p className="unit__eyebrow">O que fazemos</p>
+          <h2 className="unit__title">Serviços</h2>
+          <div className="unit__orn" aria-hidden="true"><i /><Scissors /><i /></div>
+        </header>
+
+        <div className="srv" data-reveal>
+          <figure className="srv__media">
+            {SERVICOS.map((s, i) => (
+              <Image key={s.id} src={s.img} alt={s.nome} width={640} height={640} sizes="(max-width:900px) 100vw, 40vw" className={i === active ? "is-on" : undefined} />
             ))}
-          </div>
-          <button className="carousel__arrow carousel__arrow--r" onClick={() => go(1)} aria-label="Próximo serviço">❯</button>
-        </div>
-        <div className="dots" role="tablist" aria-label="Navegação dos serviços">
-          {SERVICOS.map((s, i) => (
-            <button key={s.id} className={i === idx ? "is-on" : undefined} onClick={() => goTo(i)} aria-label={`Ir para ${s.nome}`} />
-          ))}
+            <figcaption>
+              {SERVICOS.map((s, i) => (
+                <span key={s.id} className={i === active ? "is-on" : undefined} aria-hidden={i !== active}>
+                  <small>{s.sub}</small>
+                  <span>{s.texto}</span>
+                </span>
+              ))}
+            </figcaption>
+          </figure>
+
+          <ol className="srv__list">
+            {SERVICOS.map((s, i) => (
+              <li key={s.id} className={i === active ? "is-on" : undefined} onMouseEnter={() => setActive(i)}>
+                <button type="button" className="srv__row" onClick={() => setActive(i)} onFocus={() => setActive(i)} aria-pressed={i === active}>
+                  <span className="srv__num">{String(i + 1).padStart(2, "0")}</span>
+                  <span className="srv__txt">
+                    <strong>{s.nome}</strong>
+                    <small>{s.sub}</small>
+                  </span>
+                </button>
+                <a className="srv__go" href={SITE.agendamentoOnline} target="_blank" rel="noopener noreferrer" aria-label={`Agendar ${s.nome}`}><ArrowUR /></a>
+              </li>
+            ))}
+          </ol>
         </div>
       </div>
     </section>
