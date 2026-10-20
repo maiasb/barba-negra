@@ -66,7 +66,7 @@ export function Agendamento() {
   const toggle = (id: string) =>
     setServicos((s) => (s.includes(id) ? s.filter((x) => x !== id) : [...s, id]));
 
-  const pronto = servicos.length > 0 && dia && hora;
+  const pronto = servicos.length > 0 && dia && hora && nome.trim() !== "";
 
   const mensagem = () => {
     const nomes = SERVICOS.filter((s) => servicos.includes(s.id)).map((s) => s.nome).join(", ");
@@ -78,7 +78,7 @@ export function Agendamento() {
       `• Barbeiro: ${b}`,
       `• Dia: ${d}`,
       `• Horário: ${hora}`,
-      nome ? `• Nome: ${nome}` : "",
+      `• Nome: ${nome.trim()}`,
       "",
       "Podem confirmar a disponibilidade?",
     ].filter((l, i, a) => l !== "" || a[i - 1] !== "").join("\n");
@@ -145,8 +145,8 @@ export function Agendamento() {
           </fieldset>
 
           <div className="step step--end">
-            <label htmlFor="a-nome">Seu nome (opcional)</label>
-            <input id="a-nome" value={nome} onChange={(e) => setNome(e.target.value)} autoComplete="given-name" />
+            <label htmlFor="a-nome">Seu nome</label>
+            <input id="a-nome" required value={nome} onChange={(e) => setNome(e.target.value)} autoComplete="given-name" />
             <a
               className={`btn btn--solid btn--lg${pronto ? "" : " is-disabled"}`}
               href={pronto ? waUrl(mensagem()) : undefined}

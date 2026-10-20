@@ -59,7 +59,10 @@ ul { list-style: none; }
 .logo__text small { font-size: 0.58rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--steel); margin-top: 5px; }
 .nav { display: flex; align-items: center; gap: clamp(14px, 2vw, 28px); font-size: 0.82rem; font-weight: 500; text-transform: uppercase; color: #fff; }
 .nav a:not(.btn):hover { color: var(--steel); }
-.nav .btn { text-transform: uppercase; }
+.social { display: flex; align-items: center; gap: 14px; color: #fff; }
+.social a { display: grid; place-items: center; width: 36px; height: 36px; }
+.social a:hover { color: var(--steel); }
+.social svg { width: 22px; height: 22px; }
 @media (max-width: 1000px) { .nav a:not(.btn) { display: none; } .header__in { justify-content: space-between; } }
 
 /* Hero */

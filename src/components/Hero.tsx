@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { SITE, waUrl } from "@/data/site";
+import { SITE } from "@/data/site";
 
 export function Hero() {
   return (
@@ -13,8 +13,8 @@ export function Hero() {
           <small>Barbearia em Castanhal · Imagem Masculina</small>
         </h1>
         <div className="hero__btns" data-reveal>
-          <a href="#agendar" className="btn btn--steel">Agendamento Online</a>
-          <a href={waUrl("Olá, Barba Negra! Gostaria de agendar um horário.")} target="_blank" rel="noopener noreferrer" className="btn btn--steel">Agendamento WhatsApp</a>
+          <a href={SITE.agendamentoOnline} target="_blank" rel="noopener noreferrer" className="btn btn--steel">Agendamento Online</a>
+          <a href="#agendar" className="btn btn--steel">Agendamento WhatsApp</a>
         </div>
         <p className="hero__tag" data-reveal>{SITE.anos} anos de tradição · Terça a sábado, 9h às 20h</p>
       </div>

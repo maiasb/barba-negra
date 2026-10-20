@@ -7,6 +7,7 @@ export const SITE = {
   // Número extraído do link wa.me/message/SS2CNSTGIUT7D1 da bio. Confirmar com o cliente.
   whatsapp: "559186107480",
   whatsappLink: "https://wa.me/message/SS2CNSTGIUT7D1",
+  agendamentoOnline: "https://sites.appbarber.com.br/barbanegra",
   instagram: "https://www.instagram.com/barbanegracastanhal/",
   endereco: {
     rua: "Tv. Quintino Bocaiúva, 3059",

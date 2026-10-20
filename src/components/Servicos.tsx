@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { useRef, useState } from "react";
-import { SERVICOS } from "@/data/site";
+import { SERVICOS, SITE } from "@/data/site";
 
 export function Servicos() {
   const track = useRef<HTMLDivElement>(null);
@@ -14,11 +14,6 @@ export function Servicos() {
   };
   const go = (dir: 1 | -1) => track.current?.scrollBy({ left: dir * step(), behavior: "smooth" });
   const goTo = (i: number) => track.current?.scrollTo({ left: i * step(), behavior: "smooth" });
-
-  const escolher = (id: string) => {
-    window.dispatchEvent(new CustomEvent("bn:servico", { detail: id }));
-    document.getElementById("agendar")?.scrollIntoView({ behavior: "smooth" });
-  };
 
   return (
     <section id="servicos" className="section section--light">
@@ -34,7 +29,7 @@ export function Servicos() {
                   <h3>{s.nome}</h3>
                   <em>{s.sub}</em>
                   <p>{s.texto}</p>
-                  <button className="btn btn--steel btn--sm" onClick={() => escolher(s.id)}>Agendar</button>
+                  <a className="btn btn--steel btn--sm" href={SITE.agendamentoOnline} target="_blank" rel="noopener noreferrer">Agendar</a>
                 </div>
               </article>
             ))}

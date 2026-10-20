@@ -18,7 +18,7 @@ export function Footer() {
           <a href="#sobre">Sobre nós</a>
           <a href="#servicos">Serviços</a>
           <a href="#barbeiros">Barbeiros</a>
-          <a href="#agendar">Agendar</a>
+          <a href={SITE.agendamentoOnline} target="_blank" rel="noopener noreferrer">Agendar</a>
           <a href="#unidade">Unidade</a>
         </nav>
         <div>

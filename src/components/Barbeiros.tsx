@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { useRef, useState } from "react";
-import { BARBEIROS } from "@/data/site";
+import { BARBEIROS, SITE } from "@/data/site";
 
 export function Barbeiros() {
   const track = useRef<HTMLDivElement>(null);
@@ -29,7 +29,7 @@ export function Barbeiros() {
                 <div className="scard__body">
                   <h3>{b.nome}</h3>
                   <em>{b.funcao}</em>
-                  <a className="btn btn--steel btn--sm" href="#agendar" data-barbeiro={b.id}>Agendar</a>
+                  <a className="btn btn--steel btn--sm" href={SITE.agendamentoOnline} target="_blank" rel="noopener noreferrer">Agendar</a>
                 </div>
               </article>
             ))}
