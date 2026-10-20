@@ -9,8 +9,8 @@ export const SITE = {
   whatsappLink: "https://wa.me/message/SS2CNSTGIUT7D1",
   instagram: "https://www.instagram.com/barbanegracastanhal/",
   endereco: {
-    rua: "Tv. Tiradente, 3059",
-    bairro: "Bocaiuva",
+    rua: "Tv. Quintino Bocaiúva, 3059",
+    bairro: "Centro",
     cidade: "Castanhal",
     uf: "PA",
   },
@@ -20,7 +20,7 @@ export const SITE = {
 
 export const MAPS_LINK =
   "https://www.google.com/maps/search/?api=1&query=" +
-  encodeURIComponent("Barba Negra Barbearia, Tv. Tiradente, 3059, Bocaiuva, Castanhal, PA");
+  encodeURIComponent("Barba Negra Castanhal, Tv. Quintino Bocaiúva, 3059, Centro, Castanhal, PA");
 
 // Serviços vindos dos destaques do Instagram. Sem preços: não constam no perfil.
 export const SERVICOS = [
@@ -59,5 +59,33 @@ export const AVALIACOES = [
     nota: 5,
     texto:
       "Cortei com o Rafael. Muita qualidade! Diferenciado. Mostrei uma foto minha mais antiga e pedi pra fazer igual (já pedi pra outros barbeiros lá em SP nunca fizeram igual) e o Rafael fez igual, porém melhor, mais certinho.",
+  },
+  {
+    id: "wallace-gabriel",
+    nome: "Wallace Gabriel",
+    nota: 5,
+    texto:
+      "Muito bom atendimento, fui atendido pelo profissional super atencioso e educado. Gostei muito do serviço e certamente voltarei novamente. Me tornei cliente, indico sempre a melhor barbearia de castanhal!",
+  },
+  {
+    id: "yan-alessandro",
+    nome: "Yan Alessandro",
+    nota: 5,
+    texto:
+      "Só corto aqui faz uns anos, nunca me decepciona, atendimento bom, fácil de agendar, barbeiros experientes e bons. Não mudo por nada.",
+  },
+  {
+    id: "renan-sa",
+    nome: "Renan sá",
+    nota: 5,
+    texto:
+      "Atendimento feito com muito profissionalismo. Barbeiro Júnior sabe muito bem o que faz, e faz com excelência! Recomendo! Procurem o Júnior!",
+  },
+  {
+    id: "renato-tarso",
+    nome: "Renato Tarso",
+    nota: 5,
+    texto:
+      "Atendimento 10 e serviço diferenciado. Ambiente organizado e aconchegante. Especialmente falando do Júnior, profissional experiente e dedicado.",
   },
 ] as const;

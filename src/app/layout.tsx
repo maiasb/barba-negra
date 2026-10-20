@@ -8,7 +8,7 @@ const sans = Montserrat({ subsets: ["latin"], weight: ["400", "500", "600", "700
 
 const title = "Barbearia em Castanhal | Barba Negra - Imagem Masculina";
 const description =
-  "Barbearia em Castanhal há 8 anos: corte de cabelo, barba, sobrancelha e hidratação. Agende seu horário pelo WhatsApp. Terça a sábado, 9h às 20h, no Bocaiuva.";
+  "Barbearia em Castanhal há 8 anos: corte de cabelo, barba, sobrancelha e hidratação. Agende seu horário pelo WhatsApp. Terça a sábado, 9h às 20h, no Centro.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE.url),

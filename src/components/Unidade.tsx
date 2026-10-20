@@ -10,7 +10,7 @@ export function Unidade() {
         <article className="unit" data-reveal>
           <Image src="/img/post11.jpg" alt="Interior da Barba Negra em Castanhal" width={360} height={640} sizes="(max-width:700px) 90vw, 360px" />
           <div className="unit__body">
-            <h3>Bocaiuva · Castanhal</h3>
+            <h3>Centro · Castanhal</h3>
             <ul>
               <li><b>Endereço:</b> {e.rua}, {e.bairro}, {e.cidade} - {e.uf}</li>
               <li><b>Horário:</b> {SITE.horario.dias}, 9h às 20h</li>
