@@ -18,7 +18,8 @@ jobs:
   build:
     runs-on: ubuntu-latest
     env:
-      NEXT_PUBLIC_SITE_URL: https://barbanegra.odevmaia.com.br
+      NEXT_PUBLIC_BASE_PATH: /barba-negra
+      NEXT_PUBLIC_SITE_URL: https://maiasb.github.io/barba-negra
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
